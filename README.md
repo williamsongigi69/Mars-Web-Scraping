@@ -2,7 +2,7 @@
 #Mars Mongo DB &amp; Web Scraping utilizing Beautiful Soup, Mongo DB/Flask-Pymongo, Requests Library for Python, Heroku, #Pandas, Splinter, &amp; Selenium Webdriver
 
 
-#Mission to Mars
+# Web Scraping Homework - Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.png)
 
@@ -129,4 +129,3 @@ To submit your work to BootCampSpot, create a new GitHub repository and upload t
 ### Copyright
 
 Trilogy Education Services © 2019. All Rights Reserved.
-
