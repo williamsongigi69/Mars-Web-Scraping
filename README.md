@@ -1,11 +1,3 @@
-# Mars-Web-Scraping
-#Mars Mongo DB &amp; Web Scraping utilizing Beautiful Soup, Mongo DB/Flask-Pymongo, Requests Library for Python, Heroku, #Pandas, Splinter, &amp; Selenium Webdriver
-
-
-# Mars-Web-Scraping
-#Mars Mongo DB &amp; Web Scraping utilizing Beautiful Soup, Mongo DB/Flask-Pymongo, Requests Library for Python, Heroku, #Pandas, Splinter, &amp; Selenium Webdriver
-
-
 # Web Scraping Homework - Mission to Mars
 
 ![mission_to_mars](Images/mission_to_mars.png)
