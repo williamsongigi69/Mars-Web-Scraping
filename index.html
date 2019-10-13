@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Mars</title>
+
+    <!-- BOOTSTRAP CSS-->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet" type='text/css'>
+
+  <!-- ADDITIONAL CSS-->
+  <style>
+#border {
+  padding-top: 20px;
+  border-style: solid;
+  border-width: 3px;
+  border-color: #F1F1F1;
+}
+#img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+#text_right{
+    font-size: 14px;
+}
+th{
+   font-size: 14px;
+}
+td{
+   font-size: 12px;
+}
+</style>
+
+  <!-- END CSS-->
+<body>
+
+
+<!-- HERO UNIT -->
+</br>
+</br>
+  <div class="jumbotron" style="background-color: #F1F1F1;">
+    <div class="container" align="center">
+      <h1 class="display-4">Mission to Mars</h1>
+      <a href="/scrape" class="btn btn-info" role="button">Scrape New Data</a>
+    </div>
+  </div>
+
+<!-- END HERO UNIT -->
+
+<!-- START PAGE LEFT -->
+  <div class="container-fluid">
+   <section class="row justify-content-between">
+        <div class="col-md-8">
+  </br>
+    <h3 class="text-left font-weight-bold">Latest Mars News</h3>
+    <h5 class="text-left">{{payload.news_title}}</h5>
+    <p>{{payload['news_paragraph']}}</p>
+ </br>
+  </div>
+
+ <!-- CODE PAGE RIGHT - TWEET  -->
+
+        <div class="col-md-4 left" id="border">
+            <h5>Current Weather on Mars</h5>
+        <p id="text_right">{{payload['mars_tweet']}}</p>
+        </div>
+        </br>
+
+<!-- CODE PAGE LEFT FEATURED IMAGE -->
+<div class="row">
+<div class="col-md-8 rounded p-3" style="background-color: #F1F1F1;">
+    <h3 class="display-6 text-left">Featured Mars Image</h3>
+    </br>
+      <img class="img-fluid" src="{{payload.feature_image_url}}" alt="Mars">
+</div>
+
+
+ <!-- CODE PAGE RIGHT FACTS TABLE-->
+ <div class="col-md-4" id="border">
+           <h5>Mars Facts</h5>
+   <table border="1" class="table-sm table-striped table-responsive">
+  <thead>
+    <tr style="text-align: center;">
+      <th></th>
+      <th>Mars - Earth Comparison</th>
+      <th>Mars</th>
+      <th>Earth</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Diameter:</td>
+      <td>6,779 km</td>
+      <td>12,742 km</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Mass:</td>
+      <td>6.39 × 10^23 kg</td>
+      <td>5.97 × 10^24 kg</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Moons:</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Distance from Sun:</td>
+      <td>227,943,824 km</td>
+      <td>149,598,262 km</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Length of Year:</td>
+      <td>687 Earth days</td>
+      <td>365.24 days</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Temperature:</td>
+      <td>-153 to 20 °C</td>
+      <td>-88 to 58°C</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+   <!-- CODE PAGE HEMISPHERES-->
+      </br>
+        <div class="container" id="border">
+          <div class="col-md-8" style="background-color: #00000;">
+        <h3 align="center">Mars Hemispheres</h3>
+        <hr class="my-4">
+              <div class="row">
+              <div class="col" id="border">
+              <img id="img" src="{{payload['hemisphere_image_urls'][1]['img_url']}}" alt="Mars" height="300px" width="300px">
+              <figcaption class="figure-caption text-center">{{payload['hemisphere_image_urls'][0]['title']}}</figcaption>
+              </div>
+
+                <div class="col" id="border">
+                 <img id="img" src="{{payload['hemisphere_image_urls'][3]['img_url']}}" alt="Mars" height="300px" width="300px">
+                <figcaption class="figure-caption text-center">{{payload['hemisphere_image_urls'][2]['title']}}</figcaption>
+                </div>
+           </div>
+
+          </br>
+
+  <div class="row">
+                   <div class="col" id="border">
+              <img id="img" src="{{payload['hemisphere_image_urls'][5]['img_url']}}" alt="Mars"  height="300px" width="300px">
+              <figcaption class="figure-caption text-center">{{payload['hemisphere_image_urls'][4]['title']}}</figcaption>
+   </div>
+
+                   <div class="col" id="border">
+              <img id="img" src="{{payload['hemisphere_image_urls'][7]['img_url']}}" alt="Mars"  height="300px" width="300px">
+              <figcaption class="figure-caption text-center">{{payload['hemisphere_image_urls'][6]['title']}}</figcaption>
+             </div>
+ </div>
+
+          </div>
+             </div>
+           </div>
+
+
+    </div>
+  </div>
+
+</body>
+
+</html>
